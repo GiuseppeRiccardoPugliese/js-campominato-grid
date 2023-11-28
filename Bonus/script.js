@@ -39,6 +39,15 @@ btnPlay.addEventListener('click',
     }
 );
 
+//Definisco la funzione per creare il div e creare la cella
+function createMyElement(tagtype, classname, selectDifficulty) {
+
+    const currentElement = document.createElement(tagtype);
+    currentElement.classList.add(classDifficulty(selectDifficulty, classname));
+
+    return currentElement;
+};
+
 //Definisco la funzione per la lunghezza in base alla difficolta'
 function maxLunghezza(selectDifficulty) {
 
@@ -52,15 +61,6 @@ function maxLunghezza(selectDifficulty) {
     }
     return lunghezza;
 }
-
-//Definisco la funzione per creare il div e creare la cella
-function createMyElement(tagtype, classname, selectDifficulty) {
-
-    const currentElement = document.createElement(tagtype);
-    currentElement.classList.add(classDifficulty(selectDifficulty, classname));
-
-    return currentElement;
-};
 
 //Definisco la funzione per selezionare la classe in base alle difficolta' che mi cambia le colonne
 function classDifficulty(selectDifficulty, classname) {

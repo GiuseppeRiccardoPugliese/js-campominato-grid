@@ -92,7 +92,9 @@ div#grid .square {
     border: 1px solid black;
 }
 
-div#grid .square.clicked {
+div#grid .square.clicked,
+div#grid .square-medium.clicked,
+div#grid .square-hard.clicked {
     background-color: aqua;
 }
 
