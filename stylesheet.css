@@ -81,7 +81,6 @@ div#grid .square {
     cursor: crosshair;
     align-items: center;
     justify-content: center;
-    text-align: center;
 }
 
 div#grid,

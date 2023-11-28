@@ -31,11 +31,20 @@ btnPlay.addEventListener('click',
 
 const gridElement = document.getElementById("grid");
 
+//Ciclo for per avere le mie celle
 for (i = 1; i <= 100; i++) {
 
     const newElement = createMyElement("div", "square");
     gridElement.append(newElement);
     newElement.append(i);
+
+    //funzione per colorare la cella all'interno della griglia
+    newElement.addEventListener('click',
+        function () {
+            console.log("Hai cliccato una cella", i);
+            newElement.classList.add('clicked');
+        }
+    );
 }
 
 //Definisco la funzione
@@ -45,4 +54,4 @@ function createMyElement(tagtype, classname) {
     currentElement.classList.add(classname);
 
     return currentElement;
-}
+};
