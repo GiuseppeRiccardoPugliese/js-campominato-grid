@@ -75,11 +75,10 @@ div#grid {
 }
 
 div#grid .square {
-    float: right;
+    display: inline-flex;
     width: calc(100% / 10);
     height: calc(100% / 10);
     cursor: crosshair;
-    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -92,12 +91,6 @@ div#grid .square {
 
 div#grid .square.clicked {
     background-color: aqua;
-}
-
-.clearfix::after {
-    content: '';
-    clear: both;
-    display: table;
 }
 
 /*************************************************
