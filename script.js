@@ -35,7 +35,7 @@ for (i = 1; i <= 100; i++) {
 
     const newElement = createMyElement("div", "square");
     gridElement.append(newElement);
-
+    newElement.append(i);
 }
 
 //Definisco la funzione
