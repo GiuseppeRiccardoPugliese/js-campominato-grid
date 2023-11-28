@@ -32,7 +32,7 @@ btnPlay.addEventListener('click',
 const gridElement = document.getElementById("grid");
 
 //Ciclo for per avere le mie celle
-for (i = 1; i <= 100; i++) {
+for (let i = 1; i <= 100; i++) {
 
     const newElement = createMyElement("div", "square");
     gridElement.append(newElement);
