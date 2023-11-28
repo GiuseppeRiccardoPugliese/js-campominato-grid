@@ -14,12 +14,20 @@
 /*************************************************
     UTILITIES
  *************************************************/
-.pad-y20 {
+.pad-x20 {
     padding: 0 20px;
 }
 
-.pad-y15 {
+.pad-x15 {
     padding: 0 15px;
+}
+
+.pad-right40 {
+    padding-right: 40px;
+}
+
+.marg-x10 {
+    margin: 0 10px;
 }
 
 /*************************************************
@@ -86,6 +94,26 @@ div#grid .square {
 
 div#grid .square.clicked {
     background-color: aqua;
+}
+
+.square-medium {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    display: inline-flex;
+    cursor: crosshair;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.square-hard {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+    display: inline-flex;
+    cursor: crosshair;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
 }
 
 /*************************************************

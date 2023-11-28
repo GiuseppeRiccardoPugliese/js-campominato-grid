@@ -9,17 +9,21 @@ Aggiungere una select accanto al bottone di generazione, che fornisca una scelta
 const btnPlay = document.getElementById('playbtn');
 const gridElement = document.getElementById("grid");
 
+
 //Si showa al click
 btnPlay.addEventListener('click',
 
     function () {
+
+        let selectDifficulty = parseInt(document.getElementById('difficulty').value);
         //Stringa vuota per non far generare la griglia piu' di una volta
         gridElement.innerHTML = "";
 
-        //Ciclo for per avere le mie celle
-        for (let i = 1; i <= 100; i++) {
 
-            const newElement = createMyElement("div", "square");
+        //Ciclo for per avere le mie celle modalita' easy
+        for (let i = 1; i <= maxLunghezza(selectDifficulty); i++) {
+
+            const newElement = createMyElement("div", "square", selectDifficulty);
             gridElement.append(newElement);
             newElement.append(i);
 
@@ -31,15 +35,40 @@ btnPlay.addEventListener('click',
                 }
             );
         }
+
     }
 );
 
+//Definisco la funzione per la lunghezza in base alla difficolta'
+function maxLunghezza(selectDifficulty) {
 
-//Definisco la funzione
-function createMyElement(tagtype, classname) {
+    //Condizione in base alla difficolta'
+    if (selectDifficulty === 0) { //Condizione se e' in modalita' easy
+        lunghezza = 100;
+    } else if (selectDifficulty === 1) { //Condizione se e' in modalita' normal
+        lunghezza = 81;
+    } else if (selectDifficulty === 2) { //Condizione se e' in modalita' hard
+        lunghezza = 49;
+    }
+    return lunghezza;
+}
+
+//Definisco la funzione per creare il div e creare la cella
+function createMyElement(tagtype, classname, selectDifficulty) {
 
     const currentElement = document.createElement(tagtype);
-    currentElement.classList.add(classname);
+    currentElement.classList.add(classDifficulty(selectDifficulty, classname));
 
     return currentElement;
+};
+
+//Definisco la funzione per selezionare la classe in base alle difficolta' che mi cambia le colonne
+function classDifficulty(selectDifficulty, classname) {
+    //Condizione in base alla difficolta'
+    if (selectDifficulty === 1) { //Condizione se e' in modalita' MID
+        classname = "square-medium";
+    } else if (selectDifficulty === 2) { //Condizione se e' in modalita' HARD
+        classname = "square-hard";
+    }
+    return classname;
 };
