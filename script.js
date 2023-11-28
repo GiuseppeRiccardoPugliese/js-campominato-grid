@@ -19,3 +19,30 @@ Aggiungere una select accanto al bottone di generazione, che fornisca una scelta
 // 2 Ogni cella dovra' avere un numero progressivo da 1 a 100 (for)
 // 3 Al click dell'utente si colora la cella e dovra' uscire in console il numero della cella cliccata
 
+//Si showa la griglia al click
+const btnPlay = document.getElementById('playbtn');
+btnPlay.addEventListener('click',
+
+    function () {
+        let grigliaNascosta = document.querySelector(".hidden");
+        grigliaNascosta.style.display = "block";
+    }
+);
+
+const gridElement = document.getElementById("grid");
+
+for (i = 1; i <= 100; i++) {
+
+    const newElement = createMyElement("div", "square");
+    gridElement.append(newElement);
+
+}
+
+//Definisco la funzione
+function createMyElement(tagtype, classname) {
+
+    const currentElement = document.createElement(tagtype);
+    currentElement.classList.add(classname);
+
+    return currentElement;
+}
